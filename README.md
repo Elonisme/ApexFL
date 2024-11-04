@@ -103,6 +103,8 @@ base_config = {'num_clients': 100, 'client_frac': 0.15, 'malicious_rate': 0.2,
 - Median
 - Deepsight
 
+### Pretrained Weights
+- [Google Drive](https://drive.google.com/drive/folders/10CkBB68cRyZNjqUdrNnXUHaV8UznF0P9?usp=drive_link)
 
 ## Author
 
