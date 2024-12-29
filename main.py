@@ -8,7 +8,7 @@ def generate_configs(base_config):
     # mnist, cifar10
     datas = ['cifar10']
     # 'flame', 'fltrust', and so on
-    aggregates = ['fedavg', 'flame', 'fltrust']
+    aggregates = ['flame']
     # models: 'trigger', 'dba', 'semantic', 'sig', 'blended'
     poisons = ['trigger']
     # alpha
@@ -16,7 +16,7 @@ def generate_configs(base_config):
     # malicious rate
     malicious_rates = [0.1]
     # poison probability
-    poison_probability = [0.3]
+    poison_probability = [1.0]
     # pretrained
     pretrained_slog = [False]
 
@@ -43,11 +43,11 @@ def generate_configs(base_config):
 
 
 if __name__ == '__main__':
-    base_config = {'num_clients': 10, 'client_frac': 0.2, 'malicious_rate': 0.2,
-                   'model_name': 'lenet_c1', 'data_name': 'mnist', 'aggregate_type': 'fedavg',
-                   'poison_type': 'trigger', 'poisoning_threshold': 5, 'num_epochs': 10,
-                   'save_slogan': True, 'fl_print': True, 'sampling_stride': 2, 'alpha': 0.5,
-                   'poison_probability': 0.3, 'pretrained': True}
+    base_config = {'num_clients': 100, 'client_frac': 0.2, 'malicious_rate': 0.2,
+                   'model_name': 'resnet18', 'data_name': 'cifar10', 'aggregate_type': 'flame',
+                   'poison_type': 'cutout', 'poisoning_threshold': 5, 'num_epochs': 100,
+                   'save_slogan': True, 'fl_print': True, 'sampling_stride': 2, 'alpha': 0.8,
+                   'poison_probability': 1.0, 'pretrained': True}
 
     mode = 'single'
     if mode == 'mul':

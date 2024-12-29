@@ -1,6 +1,7 @@
 import random
 
 from attacks.blended_attack import poison_data_with_blended
+from attacks.cutout import poison_data_with_cutout
 from attacks.dba import poison_data_with_dba
 from attacks.semantic_attack import poison_data_with_semantic
 from attacks.sig_attack import poison_data_with_sig
@@ -27,6 +28,8 @@ class Poison:
                 image, label = poison_data_with_blended(image, dataset_name)
             elif self.poison_type == 'dba':
                 image, label = poison_data_with_dba(image, dataset_name, test_slogan)
+            elif self.poison_type == 'cutout':
+                image, label = poison_data_with_cutout(image, test_slogan)
             else:
                 raise ValueError(f'Poison type {self.poison_type} not supported!')
             return image, label

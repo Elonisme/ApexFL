@@ -64,7 +64,7 @@ def worker(config):
     train_set, test_loader, poison_test_loader = data.get_date()
 
     # new model
-    net_model = Model(model_name, pretrained)
+    net_model = Model(model_name, data_name, pretrained)
     net = net_model.get_model()
 
     # set save detail
